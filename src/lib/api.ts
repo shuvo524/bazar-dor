@@ -85,7 +85,7 @@ export function getDir(p: Product): ChangeDir {
 export function getRisers(products: Product[], count = 6): Product[] {
   return products
     .filter((p) => getDir(p) === "up")
-    .sort((a, b) => b.change.pct - a.change.pct)
+    .sort((a, b) => Math.abs(b.change.pct) - Math.abs(a.change.pct))
     .slice(0, count);
 }
 
@@ -93,7 +93,7 @@ export function getRisers(products: Product[], count = 6): Product[] {
 export function getFallers(products: Product[], count = 6): Product[] {
   return products
     .filter((p) => getDir(p) === "down")
-    .sort((a, b) => b.change.pct - a.change.pct)
+    .sort((a, b) => Math.abs(b.change.pct) - Math.abs(a.change.pct))
     .slice(0, count);
 }
 

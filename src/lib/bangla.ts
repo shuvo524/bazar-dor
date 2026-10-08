@@ -66,7 +66,7 @@ export function formatPrice(n: number, decimals?: number): string {
 
 /** শতাংশ: ২.১ */
 export function formatPct(n: number): string {
-  return toBanglaDigits(Number(n).toFixed(1));
+  return toBanglaDigits(Math.abs(Number(n)).toFixed(1));
 }
 
 const UNIT_SHORT: Record<string, string> = {
