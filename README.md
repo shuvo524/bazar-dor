@@ -19,7 +19,7 @@ Rice, lentils, oil, vegetables, fish, meat, eggs, milk, spices, and more, with m
 
 ---
 
-## Overview
+## 📌 Overview
 
 **BazarDor** is a full-stack market price tracking web application built for Bangladesh.
 
@@ -31,7 +31,7 @@ Product details and user profiles are protected using **BetterAuth** authenticat
 
 ---
 
-## Features
+## ✨ Features
 
 * **Daily Price Tracking** — View current prices and daily price changes.
 * **Price Change Highlights** — Quickly identify products with the biggest price increases and decreases.
@@ -49,7 +49,13 @@ Product details and user profiles are protected using **BetterAuth** authenticat
 
 ---
 
-## Tech Stack
+## 🖼️ Project Preview
+
+The project includes a custom hero visual and a responsive interface designed for desktop, tablet, and mobile users.
+
+---
+
+## 🛠️ Tech Stack
 
 | Category         | Technology                   |
 | ---------------- | ---------------------------- |
@@ -67,7 +73,25 @@ Product details and user profiles are protected using **BetterAuth** authenticat
 
 ---
 
-## Application Routes
+## 📦 Dependencies
+
+Main dependencies used in this project include:
+
+* `next`
+* `react`
+* `react-dom`
+* `better-auth`
+* `@better-auth/mongo-adapter`
+* `@heroui/react`
+* `@gravity-ui/icons`
+* `react-hot-toast`
+* `typescript`
+
+The project also uses Tailwind CSS and the standard Next.js development tooling.
+
+---
+
+## 🗺️ Application Routes
 
 | Route              | Description                       | Auth |
 | ------------------ | --------------------------------- | :--: |
@@ -82,7 +106,7 @@ Product details and user profiles are protected using **BetterAuth** authenticat
 
 ---
 
-## API
+## 🔌 API
 
 BazarDor consumes product and market data from an external public API.
 
@@ -112,57 +136,33 @@ The application automatically uses the fallback API if the primary API is unavai
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
+
+Before running the project locally, make sure you have:
 
 * Node.js 20+
 * MongoDB Atlas cluster
 * Google OAuth application
 * GitHub OAuth application
 
-### Installation
-
-Clone the repository:
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/shuvo524/bazar-dor.git
 cd bazar-dor
 ```
 
-Install dependencies:
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
+### 3. Configure Environment Variables
+
 Create a `.env` file in the project root and add the required environment variables.
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Then open:
-
-```text
-http://localhost:3000
-```
-
-### Available Scripts
-
-| Command         | Description                  |
-| --------------- | ---------------------------- |
-| `npm run dev`   | Start the development server |
-| `npm run build` | Create a production build    |
-| `npm run start` | Start the production server  |
-
----
-
-## Environment Variables
-
-Create a `.env` file in the project root:
 
 ```env
 BETTER_AUTH_SECRET=your_random_secret
@@ -178,17 +178,31 @@ GITHUB_CLIENT_SECRET=your_github_client_secret
 
 > Never commit your `.env` file or expose authentication secrets.
 
-### OAuth Callback URLs
+### 4. Start the Development Server
+
+```bash
+npm run dev
+```
+
+Then open:
+
+```text
+http://localhost:3000
+```
+
+---
+
+## 🔐 OAuth Callback URLs
 
 For local development:
 
-**Google**
+### Google
 
 ```text
 http://localhost:3000/api/auth/callback/google
 ```
 
-**GitHub**
+### GitHub
 
 ```text
 http://localhost:3000/api/auth/callback/github
@@ -198,29 +212,31 @@ For production, replace `localhost:3000` with your deployed domain.
 
 ---
 
-## Deployment
+## 📜 Available Scripts
 
-BazarDor is deployed on **Vercel**.
-
-To deploy your own instance:
-
-1. Import the GitHub repository into Vercel.
-2. Add all required environment variables.
-3. Set `BETTER_AUTH_URL` to your production URL.
-4. Configure MongoDB Atlas network access.
-5. Add the production OAuth callback URLs to your Google and GitHub OAuth applications.
-6. Deploy the project.
-
-Example:
-
-```text
-https://your-domain.com/api/auth/callback/google
-https://your-domain.com/api/auth/callback/github
-```
+| Command         | Description                  |
+| --------------- | ---------------------------- |
+| `npm run dev`   | Start the development server |
+| `npm run build` | Create a production build    |
+| `npm run start` | Start the production server  |
 
 ---
 
-## Project Structure
+## 🔑 Authentication
+
+Authentication is powered by **BetterAuth** with MongoDB Atlas.
+
+Supported authentication methods:
+
+* Email & Password
+* Google OAuth
+* GitHub OAuth
+
+Protected routes redirect unauthenticated users to the sign-in page and return them to their intended destination after successful authentication.
+
+---
+
+## 📁 Project Structure
 
 ```text
 bazar-dor/
@@ -255,21 +271,38 @@ bazar-dor/
 
 ---
 
-## Authentication
+## 🌐 Deployment
 
-Authentication is powered by **BetterAuth** with MongoDB Atlas.
+BazarDor is deployed on **Vercel**.
 
-Supported authentication methods:
+To deploy your own instance:
 
-* Email & Password
-* Google OAuth
-* GitHub OAuth
+1. Import the GitHub repository into Vercel.
+2. Add all required environment variables.
+3. Set `BETTER_AUTH_URL` to your production URL.
+4. Configure MongoDB Atlas network access.
+5. Add the production OAuth callback URLs to your Google and GitHub OAuth applications.
+6. Deploy the project.
 
-Protected routes redirect unauthenticated users to the sign-in page and return them to their intended destination after successful authentication.
+Example:
+
+```text
+https://your-domain.com/api/auth/callback/google
+https://your-domain.com/api/auth/callback/github
+```
 
 ---
 
-## Developer
+## 🔗 Relevant Links
+
+* **Live Demo:** https://bazar-dor-sooty.vercel.app/
+* **GitHub Repository:** https://github.com/shuvo524/bazar-dor
+* **Developer Portfolio:** https://shuvo-das.bro.bd/
+* **GitHub Profile:** https://github.com/shuvo524
+
+---
+
+## 👨‍💻 Developer
 
 **Shuvo Das**
 
