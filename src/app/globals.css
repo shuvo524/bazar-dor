@@ -1,2 +1,44 @@
 @import "tailwindcss";
 @import "@heroui/styles";
+
+@theme {
+  --color-page: #f1f5ef;
+  --color-card: #fafcf9;
+  --color-line: #e2e8df;
+  --color-ink: #14201a;
+  --color-muted: #5b6b62;
+  --color-brand: #058a41;
+  --color-brand-dark: #046f34;
+  --color-brand-soft: #e3f3e8;
+  --color-up: #d32f2f;
+  --color-down: #0f9d58;
+  --color-chip: #f0f3ee;
+
+  --animate-marquee: marquee 90s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-bangla), ui-sans-serif, system-ui, sans-serif;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
