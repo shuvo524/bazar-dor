@@ -11,7 +11,7 @@ export default function Loading() {
         </div>
       </div>
 
-      <div className="h-[66px] animate-pulse rounded-2xl border border-line bg-card" />
+      <div className="h-16.5 animate-pulse rounded-2xl border border-line bg-card" />
 
       <ProductGridSkeleton count={6} />
     </div>

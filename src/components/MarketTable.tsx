@@ -8,7 +8,7 @@ export default function MarketTable({ markets }: { markets: Market[] }) {
 
   return (
     <div className="overflow-x-auto rounded-2xl border border-line">
-      <table className="w-full min-w-[560px] text-sm">
+      <table className="w-full min-w-140 text-sm">
         <thead>
           <tr className="text-muted">
             <th className="px-4 py-3 text-left font-semibold">বাজার</th>
