@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛒 বাজার দর (BazarDor)
 
-## Getting Started
+**প্রয়োজনীয় পণ্যের দাম এক নজরে**
 
-First, run the development server:
+চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম-দুধ ও মসলার আজকের দাম, বাজারভিত্তিক বিস্তারিত এবং দামের ওঠানামা এক জায়গায়।
+
+
+
+🔗 **Live Site:** [LIVE_LINK_এখানে_বসাও](LIVE_LINK_এখানে_বসাও)
+&nbsp;|&nbsp;
+💻 **GitHub Repo:** [https://github.com/shuvo524/bazar-dor]
+
+---
+
+## 📖 প্রজেক্ট সম্পর্কে
+
+**বাজার দর** একটি বাংলাদেশি নিত্যপ্রয়োজনীয় পণ্যের মূল্য ট্র্যাকিং ওয়েবসাইট। এখানে ৮টি ক্যাটাগরির ৩৩টি পণ্যের আজকের দাম, গতকালের তুলনায় বাড়া-কমা এবং বিভিন্ন বাজারের সর্বনিম্ন, সর্বাধিক ও গড় দাম দেখা যায়। সব দাম ও সংখ্যা বাংলায় দেখানো হয়।
+
+পণ্যের বিস্তারিত পেজ দেখতে সাইন ইন করতে হয়। সাইন ইন করা যায় ইমেইল-পাসওয়ার্ড দিয়ে, অথবা Google ও GitHub দিয়ে।
+
+---
+
+## ✨ প্রধান ফিচার
+
+| # | ফিচার | বিবরণ |
+|---|-------|--------|
+| 1 | 📈 **আজকের দাম ও দামের পরিবর্তন** | হোম পেজে "আজ দাম বেড়েছে ▲" ও "আজ দাম কমেছে ▼" সেকশনে শীর্ষ ৬টি করে পণ্য, সাথে সবুজ/লাল/ধূসর পরিবর্তনের ব্যাজ |
+| 2 | 🎞️ **লাইভ প্রাইস টিকার** | নেভবারের নিচে অনবরত স্ক্রল করা দামের স্ট্রিপ (hover করলে থামে) |
+| 3 | 🗂️ **ক্যাটাগরি ফিল্টার ও সাজানো** | ক্যাটাগরি অনুযায়ী পণ্য দেখা এবং দাম কম থেকে বেশি / বেশি থেকে কম সাজানো (বাংলা সংখ্যা নয়, সংখ্যার মান ধরে) |
+| 4 | 🔐 **নিরাপদ অথেনটিকেশন** | BetterAuth দিয়ে Email/Password, Google ও GitHub লগইন, সুরক্ষিত রুট এবং toast বার্তা |
+| 5 | 🏪 **বাজারভিত্তিক বিস্তারিত দাম** | প্রতিটি পণ্যের জন্য সর্বনিম্ন, সর্বাধিক, গড় দাম এবং বিভিন্ন বাজারের তুলনামূলক টেবিল (সুরক্ষিত পেজ) |
+| 6 | 👤 **প্রোফাইল ও তথ্য আপডেট** | ইউজারের নাম ও ইমেইল দেখা এবং নাম আপডেট করা |
+| 7 | 📱 **সম্পূর্ণ রেসপনসিভ** | মোবাইল, ট্যাবলেট ও ডেস্কটপে সমানভাবে কাজ করে |
+| 8 | ⏳ **Skeleton লোডিং ও 404** | ডেটা আসার সময় skeleton এবং ভুল লিংকে বন্ধুত্বপূর্ণ 404 পেজ |
+
+---
+
+## 🛠️ ব্যবহৃত প্রযুক্তি
+
+- **Next.js** (App Router) ও **React**
+- **TypeScript**
+- **Tailwind CSS** ও **HeroUI v3**
+- **Gravity UI Icons**
+- **BetterAuth** (Email/Password, Google, GitHub)
+- **MongoDB Atlas** (`@better-auth/mongo-adapter`)
+- **react-hot-toast**
+- **Vercel** (Deployment)
+
+---
+
+
+| Endpoint | কাজ |
+|----------|------|
+| `/categories` | সব ক্যাটাগরি |
+| `/categories/:slug` | একটি ক্যাটাগরি |
+| `/products` | সব পণ্য |
+| `/products?category=chal` | ক্যাটাগরি অনুযায়ী পণ্য |
+| `/products/:id` | একটি পণ্য |
+
+
+---
+
+## 🗺️ রুট
+
+| রুট | বিবরণ | সুরক্ষিত |
+|-----|--------|:-------:|
+| `/` | হোম পেজ | ❌ |
+| `/category/[slug]` | ক্যাটাগরি পেজ | ❌ |
+| `/product/[slug]` | পণ্যের বিস্তারিত | ✅ |
+| `/signin`, `/signup` | সাইন ইন / সাইন আপ | ❌ |
+| `/profile` | আমার প্রোফাইল | ✅ |
+| `/profile/update` | তথ্য আপডেট | ✅ |
+
+---
+
+## 🚀 লোকালে চালানোর নিয়ম
 
 ```bash
+# ১. রিপো ক্লোন
+git clone REPO_LINK_এখানে_বসাও
+cd bazar-dor
+
+# ২. প্যাকেজ ইনস্টল
+npm install
+
+# ৩. .env ফাইল বানিয়ে নিচের মানগুলো দাও
+# ৪. ডেভ সার্ভার চালু
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`.env` ফাইলে যে নামগুলো লাগবে:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```env
+BETTER_AUTH_SECRET=
+BETTER_AUTH_URL=http://localhost:3000
+BETTER_AUTH_DB_URL=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+এরপর `http://localhost:3000` খুলুন।
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 ফোল্ডার কাঠামো
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├─ app/            # পেজ ও রুট (App Router)
+│  ├─ category/[slug]
+│  ├─ product/[slug]
+│  ├─ profile
+│  ├─ signin, signup
+│  └─ api/auth/[...all]
+├─ components/     # Navbar, ProductCard, Hero, ফর্ম ইত্যাদি
+└─ lib/            # auth, api, বাংলা হেল্পার, টাইপ
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 👨‍💻 ডেভেলপার
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Shuvo Das**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> সকল দাম সম্ভাব্য; বাজার অবস্থার ওপর নির্ভর করে পরিবর্তিত হয়।
